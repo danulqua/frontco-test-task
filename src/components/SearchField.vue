@@ -54,7 +54,9 @@ const weatherStore = useWeatherStore();
 
 const debouncedSearch = debounce(async (searchTerm: string) => {
   const cities = await searchCities(searchTerm.trim());
-  autocompletionData.value = cities;
+  autocompletionData.value = cities.filter((city) => {
+    return !weatherStore.weatherData.find((c) => c.city.id === city.id);
+  });
 }, 500);
 
 const handleInput = () => {
