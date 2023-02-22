@@ -1,5 +1,7 @@
 <template>
-  <ul class="max-h-[200px] w-full overflow-auto rounded border border-gray-200">
+  <ul
+    class="max-h-[200px] w-full overflow-auto rounded border bg-brand-white border-gray-200"
+  >
     <li
       v-for="item in autocompletionData"
       :tabindex="0"
